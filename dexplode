@@ -2,7 +2,8 @@
 
 
 for i in $(/usr/bin/sudo /usr/bin/docker ps -a|awk '$1 !~ /CONTAINER/ {print $1}')
-do
+do	
+	/bin/echo "Removing container ID: $i"	
 	/usr/bin/sudo /usr/bin/docker rm $i
 
 done
